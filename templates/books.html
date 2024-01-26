@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+</head>
+<style>
+    table { border:1px solid black;}
+    th,td { border:1px solid black; padding-inline: 10px; }
+</style>
+<body>
+    <h1> Hello, here are the list of books: </h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publication Year</th>
+        </tr>
+        {% for item in db_table %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.author}}</td>
+            <td>{{item.publication_year}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br><br><br><br>
+    <a href="/add_book">Click here to add a book</a>
+
+</body>
+</html>
